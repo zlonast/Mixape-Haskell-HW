@@ -1,0 +1,113 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 322910657a88ca601c35e5e58d307912cb0036cd081b52414532dbaf05972e7d
+
+name:           my-project
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/my-project#readme>
+homepage:       https://github.com/githubuser/my-project#readme
+bug-reports:    https://github.com/githubuser/my-project/issues
+author:         Ilya Baryshnikov
+maintainer:     Zlonast3@gmail.com
+copyright:      2021 Ilya Baryshnikov
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/my-project
+
+library
+  exposed-modules:
+      Existential
+      HW0.T1
+      HW0.T2
+      HW0.T3
+      HW0.T4
+      HW0.T5
+      HW0.T6
+      HW1.Unit1.Day
+      HW1.Unit1.MyNat
+      HW1.Unit1.Tree
+      HW1.Unit2.Counter
+      HW1.Unit2.FoldTree
+      HW1.Unit2.Split
+      HW1.Unit3.Concat
+      HW1.Unit3.SemigroupVersion
+      HW2.Bonus.Cont
+      HW2.Unit1.NonEmpty
+      HW2.Unit1.StringSum
+      HW2.Unit1.Tree
+      HW2.Unit2.EvalExpr
+      HW2.Unit2.MakeAverageGreatAgain
+      HW2.Unit3.BaseCombine
+      HW2.Unit3.CopyPaste
+      HW2.Unit3.HardParser
+      HW2.Unit3.SimplParser
+  other-modules:
+      Paths_my_project
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , split
+    , transformers
+  default-language: Haskell2010
+
+executable my-project-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_my_project
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , my-project
+    , split
+    , transformers
+  default-language: Haskell2010
+
+test-suite my-project-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      HW1.TestHW1
+      HW1.UnitTest1.TestDay
+      HW1.UnitTest1.TestMyNat
+      HW1.UnitTest1.TestTree
+      HW1.UnitTest2.TestFoldTree
+      HW1.UnitTest2.TestSplit
+      HW1.UnitTest3.TestConcat
+      HW1.UnitTest3.TestSemigroup
+      HW2.TestHW2
+      HW2.UnitTest1.TestNonEmpty
+      HW2.UnitTest1.TestStringSum
+      HW2.UnitTest1.TestTree
+      HW2.UnitTest2.TestEvalExpr
+      HW2.UnitTest2.TestSimp
+      HW2.UnitTest3.TestCopyPaste
+      Paths_my_project
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -Werror
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , hspec
+    , my-project
+    , split
+    , transformers
+  default-language: Haskell2010
